@@ -21,7 +21,10 @@ async function handleGenerateNewShortUrl(req, res) {
         redirectURL: body.url,
         visitHistory: [],
     });
-    return res.status(201).json( {msg: "Entry Created"} );
+    return res.render("home", {
+        id: shortID,
+    });
+    // return res.status(201).json( {msg: "Entry Created"} );
 }
 
 async function handleGetAnalytics(req, res) {
